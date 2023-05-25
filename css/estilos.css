@@ -1,0 +1,70 @@
+:root {
+  --cinza: #aaa;
+  --branca: #fff;
+
+  --Sabor1: #a6535A;
+  --Sabor2: #591E29;
+  --Sabor3: #d98B99;
+  --Sabor4: #8C0303;
+  --Sabor5: #D9ADAD;
+}
+
+body {
+  align-items: center;
+  background: linear-gradient(45deg, #D9ADAD 0%,#a6535A 100%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+h1 {
+  color: var(--branca);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.teclado {
+  background: linear-gradient(to bottom, #d98B99 0%, #D9ADAD 100%);
+  box-shadow: 6px 8px 0 6px #591E29, 10px 10px 10px #8C0303;
+  border-radius: 30px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+}
+
+.tecla {
+  background-color: var(--branca);
+  border-radius: 30px;
+  box-shadow: 3px 3px 0 var(--Sabor1);
+  color: var(--Sabor4);
+  cursor: pointer;
+  height: 120px;
+  font-size: 1.75em;
+  font-weight: bold;
+  line-height: 120px;
+  text-align: center;
+  width: 120px;
+}
+
+.tecla.ativa,
+.tecla:active {
+  background-color: var(--Sabor2);
+  border: 4px solid  var(--Sabor2);
+  box-shadow: 3px 3px 0 var(--Sabor) inset;
+  color: var(--branca);
+  outline: none;
+}
+
+.tecla.focus,
+.tecla:focus {
+  outline: none;
+  box-shadow: 1px 1px 10px var(--Sabor1);
+}
+
+.tecla.active:focus,
+.tecla:active:focus {
+  box-shadow: 3px 3px 0 var(--Sabor2) inset, 1px 1px 10px var(--Sabor1);
+}
